@@ -3,8 +3,8 @@ import SvgComponent from "./SvgComponent";
 import "./App.css";
 
 function App() {
-  let [x, setX] = useState(100);
-  let [y, setY] = useState(150);
+  let [x, setX] = useState(200);
+  let [y, setY] = useState(50);
 
   return (
     <div className="App">

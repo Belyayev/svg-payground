@@ -12,14 +12,14 @@ function SvgComponent(props: ISvg) {
   return (
     <div className="App">
       <svg
-        width="300"
-        height="300"
-        viewBox="0 0 300 300"
+        width="400"
+        height="200"
+        viewBox="0 0 400 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line x1="20" y1="149.5" x2={x} y2={y} stroke="red" />
-        <line x1={x} y1={y} x2="277" y2="149.5" stroke="blue" />
+        <line x1="20" y1="50" x2={x} y2={y} stroke="red" />
+        <line x1={x} y1={y} x2="350" y2="50" stroke="blue" />
       </svg>
     </div>
   );
