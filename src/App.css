@@ -1,12 +1,17 @@
 html,
-body,
-h1 {
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
+h1 {
+  margin: 0;
+}
+
 .App {
+  height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: 5rem auto 5rem;
   grid-template-rows: 3rem auto 3rem;
@@ -28,16 +33,12 @@ h1 {
 header {
   background-color: rgb(137, 174, 209);
   grid-area: header;
-  justify-items: center;
 }
 
 main {
   background-color: rgb(189, 142, 84);
   grid-area: main;
-}
-
-.contents {
-  justify-items: center;
+  align-self: center;
 }
 
 footer {

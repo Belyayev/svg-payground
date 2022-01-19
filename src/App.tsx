@@ -12,9 +12,7 @@ function App() {
         <h1>SVG playground</h1>
       </header>
       <main>
-        <div className="contents">
-          <SvgComponent x={x} y={y} />
-        </div>
+        <SvgComponent x={x} y={y} />
       </main>
       <footer>
         <button onClick={() => setY(y - 10)}>up</button>
