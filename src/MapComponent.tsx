@@ -7,8 +7,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 30.745,
-  lng: 38.523,
+  lat: 51.0447,
+  lng: 114.0719,
 };
 
 const api = `${process.env.REACT_APP_API_KEY}`;
