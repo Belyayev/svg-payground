@@ -1,5 +1,20 @@
+html,
+body,
+h1 {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 5rem auto 5rem;
+  grid-template-rows: 3rem auto 3rem;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer";
+  gap: 5px;
 }
 
 .Line {
@@ -10,37 +25,23 @@
   stroke: aqua;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: rgb(137, 174, 209);
+  grid-area: header;
+  justify-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  background-color: rgb(189, 142, 84);
+  grid-area: main;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contents {
+  justify-items: center;
+}
+
+footer {
+  background-color: rgb(119, 189, 154);
+  grid-area: footer;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
