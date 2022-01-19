@@ -10,7 +10,7 @@ function SvgComponent(props: ISvg) {
   let y = props.y;
 
   return (
-    <div className="App">
+    <div className="Line">
       <svg
         width="400"
         height="200"
