@@ -13,7 +13,7 @@ function App() {
       </header>
       <main>
         <div className="main">
-          <SvgButton />
+          <SvgButton text="Home" x={150} y={40} />
           <SvgButton />
         </div>
       </main>
