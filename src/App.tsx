@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import SvgComponent from "./SvgComponent";
-import MapComponent from "./MapComponent";
 import "./App.css";
+import SvgButton from "./SVGComponents/SvgButton";
 
 function App() {
   let [x, setX] = useState(200);
@@ -13,8 +12,10 @@ function App() {
         <h1>SVG playground</h1>
       </header>
       <main>
-        {/* <SvgComponent x={x} y={y} /> */}
-        <MapComponent />
+        <div className="main">
+          <SvgButton />
+          <SvgButton />
+        </div>
       </main>
       <footer>
         <button onClick={() => setY(y - 10)}>up</button>
