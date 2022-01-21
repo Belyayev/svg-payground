@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface ISvg {
   x?: number;
   y?: number;
@@ -11,8 +13,20 @@ function SvgButton(props: ISvg) {
   if (props.y) y = props.y;
   let text = props.text;
 
+  const [hover, setHover] = useState(false);
+
+  let buttonStyle;
+  if (hover) {
+    buttonStyle = { fill: "blue", transition: "1s ease" };
+  } else {
+    buttonStyle = { fill: "transparent", transition: "1s ease" };
+  }
+
   return (
-    <div>
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <svg
         display="block"
         width={x}
@@ -21,18 +35,15 @@ function SvgButton(props: ISvg) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <style type="text/css">
-            @import
-            url(https://fonts.googleapis.com/css2?family=Share+Tech+Mono);
-          </style>
-        </defs>
-        <rect width={x} height={y} fill="lime" />
+        <style type="text/css">
+          @import url(https://fonts.googleapis.com/css2?family=Share+Tech+Mono);
+        </style>
+        <rect style={buttonStyle} width={x} height={y} />
         <text
           text-anchor="middle"
           x={x / 2}
           y={y / 2 + 5}
-          fill="black"
+          fill="lime"
           fontFamily="Share Tech Mono"
         >
           {text}
