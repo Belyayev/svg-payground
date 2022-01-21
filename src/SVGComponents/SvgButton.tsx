@@ -17,9 +17,26 @@ function SvgButton(props: ISvg) {
 
   let buttonStyle;
   if (hover) {
-    buttonStyle = { fill: "blue", transition: "1s ease" };
+    buttonStyle = {
+      fill: "#3bc1ff",
+      opacity: "50%",
+      transition: "1s ease",
+      stroke: "transparent",
+    };
   } else {
-    buttonStyle = { fill: "transparent", transition: "1s ease" };
+    buttonStyle = {
+      fill: "transparent",
+      transition: "1s ease",
+      stroke: "white",
+      opacity: "20%",
+    };
+  }
+
+  let strokeStyle;
+  if (hover) {
+    strokeStyle = {};
+  } else {
+    strokeStyle = {};
   }
 
   return (
@@ -39,6 +56,14 @@ function SvgButton(props: ISvg) {
           @import url(https://fonts.googleapis.com/css2?family=Share+Tech+Mono);
         </style>
         <rect style={buttonStyle} width={x} height={y} />
+        <line
+          style={strokeStyle}
+          x1={x / 2 - x / 3}
+          y1="2"
+          x2={x / 2 + x / 3}
+          y2="2"
+          stroke="lime"
+        />
         <text
           text-anchor="middle"
           x={x / 2}
