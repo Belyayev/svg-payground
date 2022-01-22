@@ -15,20 +15,18 @@ function SvgButton(props: ISvg) {
 
   const [hover, setHover] = useState(false);
 
-  let buttonStyle;
+  let rectStyle;
   if (hover) {
-    buttonStyle = {
-      fill: "#3bc1ff",
-      opacity: "50%",
+    rectStyle = {
       transition: "1s ease",
-      stroke: "transparent",
+      fill: "lime",
+      transform: "scale(1.3)",
     };
   } else {
-    buttonStyle = {
-      fill: "transparent",
+    rectStyle = {
       transition: "1s ease",
-      stroke: "white",
-      opacity: "20%",
+      fill: "lime",
+      transform: "scale(0)",
     };
   }
 
@@ -37,6 +35,16 @@ function SvgButton(props: ISvg) {
     strokeStyle = { transition: "1s ease", transform: "scale(1)" };
   } else {
     strokeStyle = { transition: "1s ease", transform: "scale(0)" };
+  }
+
+  let anglesStyle;
+  if (hover) {
+    anglesStyle = { transition: "0.5s ease", transform: "scale(0.9)" };
+  } else {
+    anglesStyle = {
+      transition: "0.5s ease",
+      transform: "scale(1)",
+    };
   }
 
   return (
@@ -55,14 +63,13 @@ function SvgButton(props: ISvg) {
         <style type="text/css">
           @import url(https://fonts.googleapis.com/css2?family=Share+Tech+Mono);
         </style>
-        <rect style={buttonStyle} width={x} height={y} />
         <line
           style={strokeStyle}
-          transform-origin="top left"
+          transform-origin="top center"
           x1={x / 2 - x / 3}
-          y1="1"
+          y1="2"
           x2={x / 2 + x / 3}
-          y2="1"
+          y2="2"
           stroke="lime"
         />
         <line
@@ -85,11 +92,11 @@ function SvgButton(props: ISvg) {
         />
         <line
           style={strokeStyle}
-          transform-origin="bottom right"
+          transform-origin="bottom center"
           x1={x / 2 + x / 3}
-          y1={y - 1}
+          y1={y - 2}
           x2={x / 2 - x / 3}
-          y2={y - 1}
+          y2={y - 2}
           stroke="lime"
         />
         <text
@@ -101,7 +108,7 @@ function SvgButton(props: ISvg) {
         >
           {text}
         </text>
-        <g transform-origin="50% 50%" transform="scale(0.9 0.7)">
+        <g style={anglesStyle} transform-origin="50% 50%">
           <line x1="0" y1="0" x2="10" y2="0" stroke="lime" />
           <line x1="0" y1="0" x2="0" y2="10" stroke="lime" />
           <line x1={x} y1={y} x2={x} y2={y - 10} stroke="lime" />
@@ -110,6 +117,15 @@ function SvgButton(props: ISvg) {
           <line x1="0" y1={y} x2="0" y2={y - 10} stroke="lime" />
           <line x1={x} y1="0" x2={x} y2="10" stroke="lime" />
           <line x1={x} y1="0" x2={x - 10} y2="0" stroke="lime" />
+          <rect style={rectStyle} x="3" y="3" width="5" height="5" />
+          <rect
+            style={rectStyle}
+            x={x - 8}
+            y={y - 8}
+            width="5"
+            height="5"
+            transform-origin="bottom right"
+          />
         </g>
       </svg>
     </div>
