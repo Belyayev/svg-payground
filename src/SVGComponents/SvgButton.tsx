@@ -101,6 +101,16 @@ function SvgButton(props: ISvg) {
         >
           {text}
         </text>
+        <g transform-origin="50% 50%" transform="scale(0.9 0.7)">
+          <line x1="0" y1="0" x2="10" y2="0" stroke="lime" />
+          <line x1="0" y1="0" x2="0" y2="10" stroke="lime" />
+          <line x1={x} y1={y} x2={x} y2={y - 10} stroke="lime" />
+          <line x1={x} y1={y} x2={x - 10} y2={y} stroke="lime" />
+          <line x1="0" y1={y} x2="10" y2={y} stroke="lime" />
+          <line x1="0" y1={y} x2="0" y2={y - 10} stroke="lime" />
+          <line x1={x} y1="0" x2={x} y2="10" stroke="lime" />
+          <line x1={x} y1="0" x2={x - 10} y2="0" stroke="lime" />
+        </g>
       </svg>
     </div>
   );
