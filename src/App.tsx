@@ -15,13 +15,16 @@ function App() {
         <div className="main">
           <SvgButton text="Home" x={150} y={40} />
           <SvgButton />
+          <SvgButton text="smaller" color="red" x={100} y={30} />
         </div>
       </main>
       <footer>
-        <button onClick={() => setY(y - 10)}>up</button>
-        <button onClick={() => setY(y + 10)}>down</button>
-        <button onClick={() => setX(x - 10)}>left</button>
-        <button onClick={() => setX(x + 10)}>right</button>
+        <div className="footer">
+          <button onClick={() => setY(y - 10)}>up</button>
+          <button onClick={() => setY(y + 10)}>down</button>
+          <button onClick={() => setX(x - 10)}>left</button>
+          <button onClick={() => setX(x + 10)}>right</button>
+        </div>
       </footer>
     </div>
   );
