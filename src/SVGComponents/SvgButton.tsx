@@ -58,7 +58,7 @@ function SvgButton(props: ISvg) {
         <rect style={buttonStyle} width={x} height={y} />
         <line
           style={strokeStyle}
-          transform-origin="0 0"
+          transform-origin="top left"
           x1={x / 2 - x / 3}
           y1="1"
           x2={x / 2 + x / 3}
@@ -67,7 +67,7 @@ function SvgButton(props: ISvg) {
         />
         <line
           style={strokeStyle}
-          transform-origin="200 50"
+          transform-origin="bottom right"
           x1={x / 2 + x / 3}
           y1={y - 1}
           x2={x / 2 - x / 3}
