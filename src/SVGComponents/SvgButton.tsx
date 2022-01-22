@@ -34,9 +34,9 @@ function SvgButton(props: ISvg) {
 
   let strokeStyle;
   if (hover) {
-    strokeStyle = {};
+    strokeStyle = { transition: "1s ease", transform: "scale(1)" };
   } else {
-    strokeStyle = {};
+    strokeStyle = { transition: "1s ease", transform: "scale(-1)" };
   }
 
   return (
@@ -58,10 +58,20 @@ function SvgButton(props: ISvg) {
         <rect style={buttonStyle} width={x} height={y} />
         <line
           style={strokeStyle}
+          transform-origin="0 0"
           x1={x / 2 - x / 3}
-          y1="2"
+          y1="1"
           x2={x / 2 + x / 3}
-          y2="2"
+          y2="1"
+          stroke="lime"
+        />
+        <line
+          style={strokeStyle}
+          transform-origin="200 50"
+          x1={x / 2 + x / 3}
+          y1={y - 1}
+          x2={x / 2 - x / 3}
+          y2={y - 1}
           stroke="lime"
         />
         <text
