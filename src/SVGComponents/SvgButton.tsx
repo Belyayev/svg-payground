@@ -13,13 +13,26 @@ function SvgButton(props: ISvg) {
     color = props.color;
   }
 
-  let x = 200;
+  let x = 150;
   if (props.x) x = props.x;
-  let y = 50;
+  let y = 40;
   if (props.y) y = props.y;
   let text = props.text;
 
   const [hover, setHover] = useState(false);
+  const [click, setClick] = useState(false);
+
+  let circleStyle;
+  if (click) {
+    circleStyle = {
+      transition: "0.5s",
+      transform: "scale(1)",
+    };
+  } else {
+    circleStyle = {
+      transform: "scale(0)",
+    };
+  }
 
   let rectStyle;
   if (hover) {
@@ -66,7 +79,18 @@ function SvgButton(props: ISvg) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         cursor="pointer"
+        onMouseDown={() => setClick(true)}
+        onMouseMove={() => setClick(false)}
       >
+        <circle fill="orange" cy="100" r="20">
+          <animate
+            attributeName="cx"
+            from="50"
+            to="250"
+            dur="5s"
+            repeatCount="indefinite"
+          />
+        </circle>
         <style type="text/css">
           @import url(https://fonts.googleapis.com/css2?family=Share+Tech+Mono);
         </style>
@@ -107,7 +131,7 @@ function SvgButton(props: ISvg) {
           stroke={color}
         />
         <text
-          text-anchor="middle"
+          textAnchor="middle"
           x={x / 2}
           y={y / 2 + 5}
           fill={color}
@@ -134,6 +158,15 @@ function SvgButton(props: ISvg) {
             transform-origin="bottom right"
           />
         </g>
+        <circle
+          style={circleStyle}
+          cx={x / 2}
+          cy={y / 2}
+          r={x}
+          stroke="white"
+          stroke-width="20%"
+          transform-origin="center center"
+        />
       </svg>
     </div>
   );
