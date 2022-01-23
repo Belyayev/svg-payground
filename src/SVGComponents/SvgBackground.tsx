@@ -10,45 +10,44 @@ import SvgButton from "./SvgButton";
 https://github.com/Belyayev/svg-payground
 */
 
-import { useState } from "react";
-interface ISvg {
-  x?: number;
-  y?: number;
-  text?: string;
-  color?: string;
-}
-
-function SvgBackground(props: ISvg) {
-  let x = 500;
-  if (props.x) x = props.x;
-  let y = 500;
-  if (props.y) y = props.y;
-
+function SvgBackground() {
   return (
     <div
       style={{
         position: "absolute",
-        height: "100%",
         width: "100%",
+        height: "100%",
         overflow: "hidden",
         zIndex: "-1",
-        background: "red",
+        background: "rgb(10, 14, 27)",
+        backgroundSize: "cover",
       }}
     >
       <svg
         display="block"
         width="100%"
-        height="100%"
-        viewBox="0 0 100 100"
+        viewBox="0 0 500 1000"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          width={x}
-          height={y}
-          transform-origin="bottom right"
-          fill="gray"
-          opacity="0.5"
-        />
+        <defs>
+          <pattern
+            id="grid"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect
+              x="0"
+              y="0"
+              width="50"
+              height="50"
+              fill="none"
+              stroke="lime"
+              opacity="0.2"
+            />
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
       </svg>
     </div>
   );

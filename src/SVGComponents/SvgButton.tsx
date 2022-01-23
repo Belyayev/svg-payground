@@ -79,6 +79,9 @@ function SvgButton(props: ISvg) {
 
   return (
     <div
+      style={{
+        margin: "1rem",
+      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >

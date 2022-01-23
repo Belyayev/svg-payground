@@ -21,10 +21,7 @@ function App() {
       </main>
       <footer>
         <div className="footer">
-          <button onClick={() => setY(y - 10)}>up</button>
-          <button onClick={() => setY(y + 10)}>down</button>
-          <button onClick={() => setX(x - 10)}>left</button>
-          <button onClick={() => setX(x + 10)}>right</button>
+          <h1>Footer</h1>
         </div>
       </footer>
       <SvgBackground />

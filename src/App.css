@@ -27,12 +27,11 @@ h1 {
 }
 
 header {
-  background-color: rgb(200, 203, 207);
   grid-area: header;
+  color: aquamarine;
 }
 
 main {
-  background-color: rgb(10, 14, 27);
   grid-area: main;
 }
 .main {
@@ -42,24 +41,13 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.background {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-}
 
 footer {
-  background-color: rgb(203, 209, 218);
   grid-area: footer;
   justify-content: center;
+  color: aquamarine;
 }
 .footer {
   display: flex;
   justify-content: space-around;
-}
-
-svg {
-  margin: 0.5rem;
 }
