@@ -52,18 +52,6 @@ footer {
   justify-content: space-around;
 }
 
-/*
-backup (old) code
-*/
-
-.Line {
-  stroke-width: 4px;
-}
-
-.Line :hover {
-  stroke: aqua;
-}
-
 svg {
   margin: 0.5rem;
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ISvg {
   x: number;
   y: number;
